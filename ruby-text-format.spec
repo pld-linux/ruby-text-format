@@ -32,8 +32,7 @@ funkcjonalno¶æ tego modu³u, a przy okazji nowe funkcje.
 %build
 cp %{SOURCE1} .
 ruby setup.rb config \
-	--site-ruby=%{ruby_rubylibdir} \
-	--so-dir=%{ruby_archdir}
+	--siterubyver=%{ruby_rubylibdir}
 
 ruby setup.rb setup
 rdoc --inline-source --op rdoc lib
