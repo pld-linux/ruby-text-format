@@ -9,9 +9,10 @@ Source0:	http://www.halostatue.ca/files/text-format-%{version}.tar.gz
 # Source0-md5:	f9e1aa720f39fffd4c83aeae4ba9e90f
 Source1:	setup.rb
 URL:		http://www.halostatue.ca/ruby/Text__Format.html
-BuildRequires:	rpmbuild(macros) >= 1.263
+BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-modules
 BuildArch:	noarch
+%ruby_mod_ver_requires_eq
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
