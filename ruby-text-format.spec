@@ -1,5 +1,5 @@
 Summary:	A Ruby port of Text::Format
-Summary(pl):	Port Text::Format dla jêzyka Ruby
+Summary(pl.UTF-8):   Port Text::Format dla jÄ™zyka Ruby
 Name:		ruby-Text-Format
 Version:	0.64
 Release:	2
@@ -20,10 +20,10 @@ Text::Format provides strong text formatting capabilities to Ruby.
 Based on Perl's Text::Format 0.52, it offers all of the functionality
 of that module and new capabilities besides.
 
-%description -l pl
-Text::Format udostêpnia potê¿ne mo¿liwo¶ci formatowania tekstu w
-jêzyku Ruby. Jest oparty na perlowym Text::Format 0.52 i oferuje ca³±
-funkcjonalno¶æ tego modu³u, a przy okazji nowe funkcje.
+%description -l pl.UTF-8
+Text::Format udostÄ™pnia potÄ™Å¼ne moÅ¼liwoÅ›ci formatowania tekstu w
+jÄ™zyku Ruby. Jest oparty na perlowym Text::Format 0.52 i oferuje caÅ‚Ä…
+funkcjonalnoÅ›Ä‡ tego moduÅ‚u, a przy okazji nowe funkcje.
 
 %prep
 %setup -q -n text-format-%{version}
