@@ -1,5 +1,5 @@
 Summary:	A Ruby port of Text::Format
-Summary(pl.UTF-8):   Port Text::Format dla języka Ruby
+Summary(pl.UTF-8):	Port Text::Format dla języka Ruby
 Name:		ruby-Text-Format
 Version:	0.64
 Release:	2
