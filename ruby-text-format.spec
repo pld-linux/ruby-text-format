@@ -2,7 +2,7 @@ Summary:	A Ruby port of Text::Format
 Summary(pl.UTF-8):	Port Text::Format dla języka Ruby
 Name:		ruby-Text-Format
 Version:	0.64
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://www.halostatue.ca/files/text-format-%{version}.tar.gz
@@ -11,7 +11,6 @@ Source1:	setup.rb
 URL:		http://www.halostatue.ca/ruby/Text__Format.html
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-modules
-BuildArch:	noarch
 %{?ruby_mod_ver_requires_eq}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
