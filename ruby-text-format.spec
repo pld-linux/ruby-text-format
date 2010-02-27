@@ -1,17 +1,20 @@
+%define pkgname text-format
 Summary:	A Ruby port of Text::Format
 Summary(pl.UTF-8):	Port Text::Format dla języka Ruby
-Name:		ruby-Text-Format
+Name:		ruby-%{pkgname}
 Version:	0.64
 Release:	3
 License:	GPL
 Group:		Development/Libraries
-Source0:	http://www.halostatue.ca/files/text-format-%{version}.tar.gz
+Source0:	http://www.halostatue.ca/files/%{pkgname}-%{version}.tar.gz
 # Source0-md5:	f9e1aa720f39fffd4c83aeae4ba9e90f
 Source1:	setup.rb
 URL:		http://www.halostatue.ca/ruby/Text__Format.html
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
+Obsoletes:	ruby-Text-Format
+Provides:	ruby-Text-Format
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
