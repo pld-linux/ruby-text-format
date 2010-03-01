@@ -16,6 +16,9 @@ Obsoletes:	ruby-Text-Format
 Provides:	ruby-Text-Format
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# nothing to be placed there. we're not noarch only because of ruby packaging
+%define		_enable_debug_packages	0
+
 %description
 Text::Format provides strong text formatting capabilities to Ruby.
 Based on Perl's Text::Format 0.52, it offers all of the functionality
@@ -27,12 +30,28 @@ języku Ruby. Jest oparty na perlowym Text::Format 0.52 i oferuje całą
 funkcjonalność tego modułu, a przy okazji nowe funkcje.
 
 %package rdoc
-Summary:	Documentation files for %{pkgname}
+Summary:	HTML documentation for %{pkgname}
+Summary(pl.UTF-8):	Dokumentacja w formacie HTML dla %{pkgname}
 Group:		Documentation
 Requires:	ruby >= 1:1.8.7-4
 
 %description rdoc
-Documentation files for %{pkgname}.
+HTML documentation for %{pkgname}.
+
+%description rdoc -l pl.UTF-8
+Dokumentacja w formacie HTML dla %{pkgname}.
+
+%package ri
+Summary:	ri documentation for %{pkgname}
+Summary(pl.UTF-8):	Dokumentacja w formacie ri dla %{pkgname}
+Group:		Documentation
+Requires:	ruby
+
+%description ri
+ri documentation for %{pkgname}.
+
+%description ri -l pl.UTF-8
+Dokumentacji w formacie ri dla %{pkgname}.
 
 %prep
 %setup -q -c
@@ -63,4 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %files rdoc
 %defattr(644,root,root,755)
 %{ruby_rdocdir}/%{name}-%{version}
+
+%files ri
+%defattr(644,root,root,755)
 %{ruby_ridir}/Text
