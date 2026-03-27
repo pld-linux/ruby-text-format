@@ -7,7 +7,7 @@ Summary:	A Ruby port of Text::Format
 Summary(pl.UTF-8):	Port Text::Format dla języka Ruby
 Name:		ruby-%{pkgname}
 Version:	1.0.0
-Release:	4
+Release:	5
 License:	GPL
 Group:		Development/Libraries
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
@@ -59,6 +59,9 @@ Dokumentacji w formacie ri dla %{pkgname}.
 # tgz
 
 %build
+# write .gemspec
+%__gem_helper spec
+
 %if %{with doc}
 rdoc --inline-source --op rdoc lib
 rdoc --ri --op ri lib
@@ -68,8 +71,9 @@ rm ri/cache.ri
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{ruby_vendorlibdir}
+install -d $RPM_BUILD_ROOT{%{ruby_vendorlibdir},%{ruby_specdir}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_vendorlibdir}
+cp -p %{pkgname}-%{version}.gemspec $RPM_BUILD_ROOT%{ruby_specdir}
 
 %if %{with doc}
 install -d $RPM_BUILD_ROOT{%{ruby_ridir},%{ruby_rdocdir}/%{name}-%{version}}
@@ -85,6 +89,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{ruby_vendorlibdir}/text
 %{ruby_vendorlibdir}/text/format.rb
 %{ruby_vendorlibdir}/text/format
+%{ruby_specdir}/%{pkgname}-%{version}.gemspec
 
 %if %{with doc}
 %files rdoc
